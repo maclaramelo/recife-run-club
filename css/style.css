@@ -1,0 +1,1098 @@
+/* ==========================================================================
+   RECIFE RUN CLUB - FOLHA DE ESTILOS OFICIAL (DARK MODE)
+   Projeto Acadêmico de Engenharia de Software - 2º Período
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DEFINIÇÃO DAS VARIÁVEIS GLOBAIS NO :root
+   Exigência: Verde Neon (#31EC56), Magenta (#EF036C) e Rosa/Lilás (#EE72F8)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Cores Oficiais Obrigatórias */
+  --color-neon-green: #31EC56;  /* Verde Neon: Destaques de ação, sucesso e botões */
+  --color-magenta: #EF036C;     /* Magenta: Energia, alertas, títulos e provas principais */
+  --color-pink-lilac: #EE72F8;  /* Rosa / Lilás: Gamificação, medalhas e badges */
+
+  /* Cores de Fundo (Dark Mode Moderno) */
+  --bg-dark-base: #0B0E14;      /* Fundo geral da página */
+  --bg-card: #151A24;           /* Fundo dos cartões e blocos de conteúdo */
+  --bg-card-hover: #1A212E;     /* Destaque suave no hover */
+  --bg-surface: #1E2535;        /* Fundo de inputs, cabeçalhos de tabela e alertas */
+  --bg-surface-alt: #252F42;    /* Fundo secundário para contraste */
+
+  /* Cores de Texto */
+  --text-primary: #F4F6FB;      /* Texto de alto contraste para leitura */
+  --text-secondary: #9BA6B8;    /* Texto de apoio, descrições e legendas */
+  --text-muted: #647087;        /* Texto desabilitado ou de menor prioridade */
+
+  /* Bordas e Destaques Luminosos (Glow Effects) */
+  --border-subtle: #242E40;
+  --border-neon: rgba(49, 236, 86, 0.45);
+  --border-magenta: rgba(239, 3, 108, 0.45);
+  --border-pink: rgba(238, 114, 248, 0.45);
+
+  --glow-neon: 0 0 16px rgba(49, 236, 86, 0.28);
+  --glow-magenta: 0 0 16px rgba(239, 3, 108, 0.28);
+  --glow-pink: 0 0 16px rgba(238, 114, 248, 0.28);
+
+  /* Dimensões, Espaçamentos e Tipografia */
+  --font-main: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --transition: all 0.25s ease-in-out;
+  --max-width: 1200px;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET E ESTILOS GERAIS
+   -------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-dark-base);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --------------------------------------------------------------------------
+   3. CABEÇALHO E MENU DE NAVEGAÇÃO
+   -------------------------------------------------------------------------- */
+.header-site {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(11, 14, 20, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 14px 0;
+}
+
+.header-site .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Logomarca com gradiente neon */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.brand-icon {
+  background: linear-gradient(135deg, var(--color-neon-green), var(--color-magenta));
+  color: #000;
+  font-weight: 900;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--glow-neon);
+}
+
+.brand-text {
+  color: var(--text-primary);
+}
+
+.brand-text span {
+  color: var(--color-neon-green);
+}
+
+/* Navegação semântica */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.92rem;
+  transition: var(--transition);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.nav-link:hover {
+  color: var(--color-neon-green);
+  background-color: var(--bg-surface);
+}
+
+/* Resumo do Perfil Logado no Header */
+.user-profile-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 6px 16px 6px 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.avatar-chip {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-magenta), var(--color-pink-lilac));
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+}
+
+.profile-stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+}
+
+.stat-km {
+  color: var(--color-neon-green);
+  font-weight: 600;
+}
+
+.stat-medals {
+  color: var(--color-pink-lilac);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   4. BANNER PRINCIPAL / HERO
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding: 50px 0 35px;
+  text-align: center;
+  background: radial-gradient(circle at 50% 20%, rgba(239, 3, 108, 0.12) 0%, transparent 65%);
+}
+
+.hero-tag {
+  display: inline-block;
+  background-color: rgba(49, 236, 86, 0.12);
+  color: var(--color-neon-green);
+  border: 1px solid var(--border-neon);
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 14px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.hero-title .highlight-magenta {
+  color: var(--color-magenta);
+}
+
+.hero-title .highlight-green {
+  color: var(--color-neon-green);
+}
+
+.hero-desc {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   5. TÍTULOS E ESTRUTURA DAS SEÇÕES
+   -------------------------------------------------------------------------- */
+.section-block {
+  padding: 55px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-header {
+  margin-bottom: 35px;
+}
+
+.section-subtitle {
+  color: var(--color-neon-green);
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.section-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.section-lead {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  margin-top: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   6. SEÇÃO 2: CORRIDAS E TREINOS
+   -------------------------------------------------------------------------- */
+.grid-cards-corridas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.card-corrida {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-corrida:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-neon);
+  box-shadow: var(--glow-neon);
+}
+
+.card-corrida.destaque-magenta:hover {
+  border-color: var(--border-magenta);
+  box-shadow: var(--glow-magenta);
+}
+
+.card-corrida.destaque-pink:hover {
+  border-color: var(--border-pink);
+  box-shadow: var(--glow-pink);
+}
+
+.corrida-badge {
+  align-self: flex-start;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.badge-bimestral {
+  background-color: rgba(239, 3, 108, 0.15);
+  color: var(--color-magenta);
+  border: 1px solid var(--border-magenta);
+}
+
+.badge-mensal {
+  background-color: rgba(49, 236, 86, 0.15);
+  color: var(--color-neon-green);
+  border: 1px solid var(--border-neon);
+}
+
+.badge-gratuito {
+  background-color: rgba(238, 114, 248, 0.15);
+  color: var(--color-pink-lilac);
+  border: 1px solid var(--border-pink);
+}
+
+.corrida-distancia {
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.corrida-distancia span {
+  font-size: 1.1rem;
+  color: var(--color-neon-green);
+}
+
+.corrida-nome {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.corrida-meta-list {
+  list-style: none;
+  margin: 14px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.corrida-meta-item strong {
+  color: var(--text-primary);
+}
+
+.corrida-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 18px;
+  margin-top: 8px;
+}
+
+.corrida-preco {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-neon-green);
+}
+
+.corrida-preco.gratis {
+  color: var(--color-pink-lilac);
+}
+
+/* --------------------------------------------------------------------------
+   7. SEÇÃO 3: PONTOS FIXOS DE HIDRATAÇÃO DO RECIFE
+   -------------------------------------------------------------------------- */
+.grid-pontos-hidratacao {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card-hidratacao {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.card-hidratacao:hover {
+  border-color: var(--color-neon-green);
+  background-color: var(--bg-card-hover);
+}
+
+.ponto-numero {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: rgba(49, 236, 86, 0.15);
+  color: var(--color-neon-green);
+  border: 1px solid var(--border-neon);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.ponto-nome {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+
+.ponto-bairro {
+  color: var(--color-pink-lilac);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.ponto-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+.ponto-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag-item {
+  font-size: 0.72rem;
+  background-color: var(--bg-surface);
+  color: var(--text-secondary);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+/* --------------------------------------------------------------------------
+   8. SEÇÃO 4: INSCRIÇÃO, KITS, MEDALHAS E CHECKOUT
+   -------------------------------------------------------------------------- */
+.layout-checkout {
+  display: grid;
+  grid-template-columns: 1.6fr 1.1fr;
+  gap: 30px;
+}
+
+.form-box {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+}
+
+.form-group-block {
+  margin-bottom: 26px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 22px;
+}
+
+.form-group-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.form-subtitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.step-pill {
+  background-color: var(--color-neon-green);
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 900;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+/* Campos de entrada e seleção */
+.input-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.custom-select, .custom-input, .custom-textarea {
+  width: 100%;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.custom-select:focus, .custom-input:focus, .custom-textarea:focus {
+  border-color: var(--color-neon-green);
+  box-shadow: 0 0 0 2px rgba(49, 236, 86, 0.2);
+}
+
+/* Opções de Kit e Tamanho de Camisas */
+.kit-card-toggle {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: var(--transition);
+}
+
+.kit-card-toggle:hover {
+  border-color: var(--color-pink-lilac);
+}
+
+.kit-checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--color-neon-green);
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.kit-info-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.kit-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.kit-price {
+  color: var(--color-neon-green);
+  font-weight: 700;
+}
+
+.badge-desconto-pacote {
+  display: inline-block;
+  background-color: rgba(239, 3, 108, 0.18);
+  color: var(--color-magenta);
+  border: 1px solid var(--border-magenta);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  margin-top: 6px;
+}
+
+/* Grade de Tamanhos de Camisa: P, M, G, GG */
+.camisa-selector-area {
+  margin-top: 14px;
+  background-color: var(--bg-dark-base);
+  border: 1px dashed var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.tamanhos-grade {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.radio-tamanho-label {
+  flex: 1;
+  text-align: center;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.radio-tamanho-input {
+  display: none;
+}
+
+.radio-tamanho-input:checked + .radio-tamanho-label {
+  background-color: var(--color-neon-green);
+  color: #000;
+  border-color: var(--color-neon-green);
+  box-shadow: var(--glow-neon);
+}
+
+/* Seletor de Modo de Medalhas (Fidelidade vs Moeda de Troca) */
+.medalhas-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.medalha-modo-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.radio-medalha-input {
+  display: none;
+}
+
+.radio-medalha-input:checked + .medalha-modo-card {
+  border-color: var(--color-pink-lilac);
+  background-color: rgba(238, 114, 248, 0.08);
+  box-shadow: var(--glow-pink);
+}
+
+.medalha-modo-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.medalha-modo-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+/* Métodos de Pagamento: PIX vs Cartão */
+.metodos-pagamento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.pagamento-option-label {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.radio-pagamento-input {
+  display: none;
+}
+
+.radio-pagamento-input:checked + .pagamento-option-label {
+  border-color: var(--color-neon-green);
+  color: var(--color-neon-green);
+  background-color: rgba(49, 236, 86, 0.08);
+}
+
+.detalhes-cartao-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.row-inputs-duplo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.area-pix-box {
+  background-color: var(--bg-surface);
+  border: 1px dashed var(--color-neon-green);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  text-align: center;
+}
+
+.pix-qr-simulado {
+  width: 140px;
+  height: 140px;
+  margin: 10px auto;
+  background-color: #fff;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 8px;
+}
+
+/* Card de Resumo de Valores (Checkout Sidebar) */
+.checkout-summary-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  position: sticky;
+  top: 90px;
+}
+
+.summary-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 12px;
+}
+
+.summary-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.92rem;
+  margin-bottom: 20px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+}
+
+.summary-item.destaque-desconto {
+  color: var(--color-magenta);
+  font-weight: 600;
+}
+
+.summary-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 16px;
+  margin-bottom: 22px;
+}
+
+.total-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.total-valor {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--color-neon-green);
+}
+
+/* Botões de Ação */
+.btn-primary {
+  display: block;
+  width: 100%;
+  background-color: var(--color-neon-green);
+  color: #000;
+  font-weight: 800;
+  font-size: 1rem;
+  text-align: center;
+  padding: 14px 20px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--glow-neon);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-neon-green);
+  color: var(--color-neon-green);
+}
+
+.btn-magenta {
+  background-color: var(--color-magenta);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--glow-magenta);
+}
+
+.btn-magenta:hover {
+  filter: brightness(1.1);
+}
+
+/* --------------------------------------------------------------------------
+   9. SEÇÃO 5: RANKING DOS 8 CORREDORES DA EQUIPE
+   -------------------------------------------------------------------------- */
+.ranking-table-wrapper {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+}
+
+.ranking-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.ranking-table th {
+  background-color: var(--bg-surface);
+  padding: 16px 20px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.ranking-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.95rem;
+}
+
+.ranking-table tr:hover td {
+  background-color: var(--bg-card-hover);
+}
+
+.col-posicao {
+  font-weight: 800;
+  font-size: 1.1rem;
+  width: 70px;
+}
+
+.podio-1 {
+  color: var(--color-neon-green);
+}
+
+.podio-2 {
+  color: var(--color-magenta);
+}
+
+.podio-3 {
+  color: var(--color-pink-lilac);
+}
+
+.corredor-perfil-td {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+}
+
+.corredor-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  border: 1px solid var(--border-subtle);
+}
+
+.badge-logado-equipe {
+  background-color: rgba(49, 236, 86, 0.15);
+  color: var(--color-neon-green);
+  border: 1px solid var(--border-neon);
+  font-size: 0.68rem;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  margin-left: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   10. SEÇÃO 6: MINHAS INSCRIÇÕES, TROCA 48H E REEMBOLSO 72H
+   -------------------------------------------------------------------------- */
+.grid-inscricoes-usuario {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.card-minha-inscricao {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.inscricao-header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+}
+
+.inscricao-codigo {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.status-badge-confirmada {
+  background-color: rgba(49, 236, 86, 0.15);
+  color: var(--color-neon-green);
+  border: 1px solid var(--border-neon);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+}
+
+/* Blocos de Teste de Regras de Negócio */
+.regra-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.regra-titulo {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.regra-alerta-tempo {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.alerta-valido {
+  background-color: rgba(49, 236, 86, 0.15);
+  color: var(--color-neon-green);
+}
+
+.alerta-expirado {
+  background-color: rgba(239, 3, 108, 0.15);
+  color: var(--color-magenta);
+}
+
+.box-acoes-inline {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   11. RODAPÉ
+   -------------------------------------------------------------------------- */
+.footer-site {
+  background-color: #07090D;
+  border-top: 1px solid var(--border-subtle);
+  padding: 35px 0 25px;
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.footer-equipe-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 14px 0 20px;
+}
+
+.footer-membro-tag {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   12. RESPONSIVIDADE E AJUSTES MOBILE
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .layout-checkout {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-summary-card {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-site .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .tamanhos-grade {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+  }
+
+  .medalhas-container {
+    grid-template-columns: 1fr;
+  }
+}
