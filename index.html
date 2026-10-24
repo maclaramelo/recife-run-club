@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recife Run Club | Corridas de Rua e Treinos no Recife</title>
+  
+  <!-- Inclusão da Folha de Estilos Oficial (Dark Mode + Paleta de Cores) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. CABEÇALHO / HEADER
+       Navegação principal e resumo do perfil logado (Maria Clara)
+       ======================================================================== -->
+  <header class="header-site" id="topo-site">
+    <div class="container">
+      
+      <!-- Marca / Logo do Clube -->
+      <a href="#topo-site" class="brand-logo" aria-label="Recife Run Club - Página Inicial">
+        <div class="brand-icon">RRC</div>
+        <div class="brand-text">Recife <span>Run Club</span></div>
+      </a>
+
+      <!-- Menu Semântico de Navegação -->
+      <nav class="nav-menu" id="menu-navegacao" aria-label="Navegação Principal">
+        <a href="#calendario-corridas" class="nav-link">Corridas</a>
+        <a href="#pontos-hidratacao" class="nav-link">Pontos de Hidratação</a>
+        <a href="#secao-inscricao" class="nav-link">Inscrições & Kits</a>
+        <a href="#secao-ranking" class="nav-link">Ranking</a>
+        <a href="#minhas-inscricoes" class="nav-link">Minhas Inscrições</a>
+      </nav>
+
+      <!-- Resumo do Perfil Logado no Sistema -->
+      <!-- IDs disponíveis para manipulação via JavaScript em etapas posteriores -->
+      <div class="user-profile-badge" id="perfil-logado-header">
+        <div class="avatar-chip" aria-hidden="true">MC</div>
+        <div class="profile-info">
+          <span class="profile-name" id="user-profile-name">Maria Clara</span>
+          <div class="profile-stats">
+            <span class="stat-km" id="user-profile-km">🏃 65 km</span>
+            <span class="stat-medals" id="user-profile-medals">🏅 5 medalhas</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       HERO BANNER / APRESENTAÇÃO
+       ======================================================================== -->
+  <section class="hero-section" id="secao-hero">
+    <div class="container">
+      <span class="hero-tag">Engenharia de Software • 2º Período</span>
+      <h1 class="hero-title">
+        Corra pelas pontes e ruas históricas do <br>
+        <span class="highlight-green">Recife</span> com o 
+        <span class="highlight-magenta">Recife Run Club</span>
+      </h1>
+      <p class="hero-desc">
+        A plataforma comunitária que une saúde, percursos marcantes, treinos gratuitos,
+        pontos de hidratação oficiais e um sistema inovador de medalhas com dupla função.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       CONTEÚDO PRINCIPAL
+       ======================================================================== -->
+  <main>
+
+    <!-- ======================================================================
+         2. CALENDÁRIO DE CORRIDAS E TREINOS
+         Regras: Bimestral (5km/15km), Mensal (10km) e Treino Quinzenal Gratuito
+         ====================================================================== -->
+    <section class="section-block" id="calendario-corridas">
+      <div class="container">
+        
+        <header class="section-header">
+          <p class="section-subtitle">Calendário Oficial</p>
+          <h2 class="section-title">Corridas e Treinos no Recife</h2>
+          <p class="section-lead">
+            Participe das nossas provas cronometradas ou junte-se aos treinos gratuitos para a comunidade.
+          </p>
+        </header>
+
+        <!-- Grid de Eventos Disponíveis -->
+        <div class="grid-cards-corridas" id="lista-eventos-cards">
+          
+          <!-- Card 1: Corrida Bimestral (5km e 15km) -->
+          <article class="card-corrida destaque-magenta" id="card-corrida-bimestral">
+            <div>
+              <span class="corrida-badge badge-bimestral">Bimestral • Prova Oficial</span>
+              <div class="corrida-distancia">5km <span>e</span> 15km</div>
+              <h3 class="corrida-nome">Desafio das Pontes do Recife</h3>
+              <ul class="corrida-meta-list">
+                <li class="corrida-meta-item">📅 <strong>Frequência:</strong> A cada 2 meses</li>
+                <li class="corrida-meta-item">📍 <strong>Largada:</strong> Bairro do Recife / Cais da Alfândega</li>
+                <li class="corrida-meta-item">⏱️ <strong>Cronometragem:</strong> Chip eletrônico oficial</li>
+                <li class="corrida-meta-item">💧 <strong>Hidratação:</strong> 4 pontos obrigatórios no percurso</li>
+              </ul>
+            </div>
+            <div class="corrida-footer">
+              <div>
+                <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">A partir de</span>
+                <span class="corrida-preco">R$ 80,00</span>
+              </div>
+              <a href="#secao-inscricao" class="btn-magenta btn-selecionar-corrida" data-evento-id="bimestral-15km">Inscrever-se</a>
+            </div>
+          </article>
+
+          <!-- Card 2: Corrida Mensal (10km) -->
+          <article class="card-corrida" id="card-corrida-mensal">
+            <div>
+              <span class="corrida-badge badge-mensal">Mensal • Prova Oficial</span>
+              <div class="corrida-distancia">10km</div>
+              <h3 class="corrida-nome">Circuito Noturno Boa Viagem</h3>
+              <ul class="corrida-meta-list">
+                <li class="corrida-meta-item">📅 <strong>Frequência:</strong> Todos os meses</li>
+                <li class="corrida-meta-item">📍 <strong>Largada:</strong> 2º Jardim de Boa Viagem</li>
+                <li class="corrida-meta-item">⏱️ <strong>Cronometragem:</strong> Chip eletrônico oficial</li>
+                <li class="corrida-meta-item">💧 <strong>Hidratação:</strong> 4 pontos obrigatórios no percurso</li>
+              </ul>
+            </div>
+            <div class="corrida-footer">
+              <div>
+                <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Valor individual</span>
+                <span class="corrida-preco">R$ 60,00</span>
+              </div>
+              <a href="#secao-inscricao" class="btn-primary btn-selecionar-corrida" data-evento-id="mensal-10km" style="width: auto; padding: 10px 18px;">Inscrever-se</a>
+            </div>
+          </article>
+
+          <!-- Card 3: Treino Quinzenal Gratuito -->
+          <article class="card-corrida destaque-pink" id="card-treino-quinzenal">
+            <div>
+              <span class="corrida-badge badge-gratuito">Quinzenal • Comunitário</span>
+              <div class="corrida-distancia">5km <span>a</span> 8km</div>
+              <h3 class="corrida-nome">Treinão da Madrugada Recife</h3>
+              <ul class="corrida-meta-list">
+                <li class="corrida-meta-item">📅 <strong>Frequência:</strong> A cada 15 dias (Sábados)</li>
+                <li class="corrida-meta-item">📍 <strong>Ponto de Encontro:</strong> Marco Zero</li>
+                <li class="corrida-meta-item">👥 <strong>Público:</strong> Aberto para todos os níveis</li>
+                <li class="corrida-meta-item">💧 <strong>Hidratação:</strong> Paradas nos 4 pontos obrigatórios</li>
+              </ul>
+            </div>
+            <div class="corrida-footer">
+              <div>
+                <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Participação</span>
+                <span class="corrida-preco gratis">100% Grátis</span>
+              </div>
+              <a href="#secao-inscricao" class="btn-secondary btn-selecionar-corrida" data-evento-id="treino-quinzenal">Participar</a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. PONTOS FIXOS OBRIGATÓRIOS DE HIDRATAÇÃO DO RECIFE
+         Regra de Negócio RN02: 4 pontos fixos e obrigatórios no município
+         ====================================================================== -->
+    <section class="section-block" id="pontos-hidratacao">
+      <div class="container">
+        
+        <header class="section-header">
+          <p class="section-subtitle">Infraestrutura e Saúde</p>
+          <h2 class="section-title">4 Pontos Fixos Obrigatórios de Hidratação</h2>
+          <p class="section-lead">
+            Conforme a RN02, todas as corridas e treinos contam obrigatoriamente com postos homologados de suporte em 4 locais estratégicos do Recife:
+          </p>
+        </header>
+
+        <div class="grid-pontos-hidratacao" id="lista-pontos-hidratacao">
+          
+          <!-- Ponto 1: Marco Zero -->
+          <article class="card-hidratacao" id="ponto-marco-zero">
+            <div class="ponto-numero">1</div>
+            <h3 class="ponto-nome">Marco Zero</h3>
+            <p class="ponto-bairro">Bairro do Recife (Recife Antigo)</p>
+            <p class="ponto-desc">
+              Ponto central histórico à beira-mar do porto, com distribuição de água mineral gelada e atendimento aos atletas.
+            </p>
+            <div class="ponto-tags">
+              <span class="tag-item">Água Gelada</span>
+              <span class="tag-item">Isotônico</span>
+              <span class="tag-item">Primeiros Socorros</span>
+            </div>
+          </article>
+
+          <!-- Ponto 2: Parque das Esculturas -->
+          <article class="card-hidratacao" id="ponto-parque-esculturas">
+            <div class="ponto-numero">2</div>
+            <h3 class="ponto-nome">Parque das Esculturas</h3>
+            <p class="ponto-bairro">Molhe de Brasília Teimosa / Bacia do Pina</p>
+            <p class="ponto-desc">
+              Localizado na extremidade dos arrecifes em frente ao porto, proporcionando hidratação e vista panorâmica da cidade.
+            </p>
+            <div class="ponto-tags">
+              <span class="tag-item">Água Mineral</span>
+              <span class="tag-item">Frutas</span>
+              <span class="tag-item">Posto Avançado</span>
+            </div>
+          </article>
+
+          <!-- Ponto 3: 2º Jardim de Boa Viagem -->
+          <article class="card-hidratacao" id="ponto-segundo-jardim">
+            <div class="ponto-numero">3</div>
+            <h3 class="ponto-nome">2º Jardim de Boa Viagem</h3>
+            <p class="ponto-bairro">Avenida Boa Viagem (Zona Sul)</p>
+            <p class="ponto-desc">
+              Ponto de encontro tradicional na orla sul, com estrutura completa para reposição hidroeletrolítica na brisa da praia.
+            </p>
+            <div class="ponto-tags">
+              <span class="tag-item">Água e Gelo</span>
+              <span class="tag-item">Isotônico</span>
+              <span class="tag-item">Equipe de Fisioterapia</span>
+            </div>
+          </article>
+
+          <!-- Ponto 4: Forte do Brum -->
+          <article class="card-hidratacao" id="ponto-forte-brum">
+            <div class="ponto-numero">4</div>
+            <h3 class="ponto-nome">Forte do Brum</h3>
+            <p class="ponto-bairro">Praça da Comunidade Luso-Brasileira</p>
+            <p class="ponto-desc">
+              Fortaleza histórica do século XVII no norte do porto, ponto estratégico para hidratação em percursos longos.
+            </p>
+            <div class="ponto-tags">
+              <span class="tag-item">Água Gelada</span>
+              <span class="tag-item">Frutas</span>
+              <span class="tag-item">Ambulância de Apoio</span>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. INSCRIÇÃO, KITS, CAMISAS, MEDALHAS E CHECKOUT
+         Regras: Opcional Kit/Camisa (P, M, G, GG) com desconto de pacote;
+         Medalhas (Fidelidade vs Moeda de Troca >= 3); Pagamento PIX ou Cartão.
+         ====================================================================== -->
+    <section class="section-block" id="secao-inscricao">
+      <div class="container">
+        
+        <header class="section-header">
+          <p class="section-subtitle">Garanta sua Vaga</p>
+          <h2 class="section-title">Inscrição e Checkout Oficial</h2>
+          <p class="section-lead">
+            Monte seu pacote personalizado, escolha o tamanho da camisa e aproveite suas medalhas acumuladas.
+          </p>
+        </header>
+
+        <div class="layout-checkout">
+          
+          <!-- Formulário Principal de Inscrição -->
+          <div class="form-box">
+            <form id="form-inscricao" novalidate>
+              
+              <!-- Etapa A: Seleção de Prova -->
+              <div class="form-group-block">
+                <h3 class="form-subtitle">
+                  <span class="step-pill">1</span> Escolha a Corrida ou Treino
+                </h3>
+                <label for="select-evento" class="input-label">Modalidade desejada:</label>
+                <select id="select-evento" name="evento" class="custom-select" required>
+                  <option value="bimestral-15km" data-preco="80">Desafio das Pontes do Recife (Bimestral - 15km) - R$ 80,00</option>
+                  <option value="bimestral-5km" data-preco="70">Desafio das Pontes do Recife (Bimestral - 5km) - R$ 70,00</option>
+                  <option value="mensal-10km" data-preco="60">Circuito Noturno Boa Viagem (Mensal - 10km) - R$ 60,00</option>
+                  <option value="treino-quinzenal" data-preco="0">Treinão Comunitário (Quinzenal Gratuito) - R$ 0,00</option>
+                </select>
+              </div>
+
+              <!-- Etapa B: Kit Oficial e Tamanho da Camisa -->
+              <div class="form-group-block">
+                <h3 class="form-subtitle">
+                  <span class="step-pill">2</span> Kit Oficial e Camisa (Opcional)
+                </h3>
+                
+                <!-- Toggle do Kit -->
+                <label class="kit-card-toggle" for="checkbox-incluir-kit">
+                  <input type="checkbox" id="checkbox-incluir-kit" name="incluirKit" class="kit-checkbox" checked>
+                  <div style="flex: 1;">
+                    <div class="kit-info-header">
+                      <span class="kit-title">Adicionar Kit Oficial (Camisa Dry-Fit + Viseira + Sacochila)</span>
+                      <span class="kit-price" id="preco-kit-exibicao">+ R$ 45,00</span>
+                    </div>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 4px;">
+                      Ao escolher a Inscrição + Kit + Camisa, você ganha o <strong>desconto automático de pacote completo</strong>.
+                    </p>
+                    <span class="badge-desconto-pacote">🎁 Desconto de R$ 15,00 no Pacote Completo</span>
+                  </div>
+                </label>
+
+                <!-- Grade de Tamanhos de Camisa: P, M, G, GG -->
+                <div class="camisa-selector-area" id="area-seletor-camisa">
+                  <label class="input-label">Selecione o tamanho da sua camisa:</label>
+                  <div class="tamanhos-grade" role="radiogroup" aria-label="Tamanhos de Camisa">
+                    
+                    <input type="radio" name="tamanhoCamisa" id="tamanho-p" value="P" class="radio-tamanho-input">
+                    <label for="tamanho-p" class="radio-tamanho-label">P</label>
+
+                    <input type="radio" name="tamanhoCamisa" id="tamanho-m" value="M" class="radio-tamanho-input" checked>
+                    <label for="tamanho-m" class="radio-tamanho-label">M</label>
+
+                    <input type="radio" name="tamanhoCamisa" id="tamanho-g" value="G" class="radio-tamanho-input">
+                    <label for="tamanho-g" class="radio-tamanho-label">G</label>
+
+                    <input type="radio" name="tamanhoCamisa" id="tamanho-gg" value="GG" class="radio-tamanho-input">
+                    <label for="tamanho-gg" class="radio-tamanho-label">GG</label>
+                  </div>
+                  <small style="color: var(--text-muted); font-size: 0.78rem; display: block; margin-top: 8px;">
+                    * Trocas de tamanho permitidas no sistema com até 48 horas de antecedência da largada.
+                  </small>
+                </div>
+              </div>
+
+              <!-- Etapa C: Gamificação com Medalhas (Dupla Função) -->
+              <div class="form-group-block">
+                <h3 class="form-subtitle">
+                  <span class="step-pill">3</span> Carteira de Medalhas (Dupla Função)
+                </h3>
+                <p style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 12px;">
+                  Saldo atual: <strong style="color: var(--color-pink-lilac);" id="saldo-medalhas-usuario">5 medalhas ativas</strong>. Como deseja utilizá-las nesta etapa?
+                </p>
+
+                <div class="medalhas-container">
+                  <!-- Modo Fidelidade -->
+                  <label for="modo-fidelidade">
+                    <input type="radio" name="modoMedalha" id="modo-fidelidade" value="fidelidade" class="radio-medalha-input" checked>
+                    <div class="medalha-modo-card">
+                      <div class="medalha-modo-title">⭐ Modo Fidelidade</div>
+                      <p class="medalha-modo-desc">
+                        Acumule suas medalhas por até <strong>3 meses</strong> para subir no ranking e desbloquear insígnias no clube.
+                      </p>
+                    </div>
+                  </label>
+
+                  <!-- Modo Moeda de Troca -->
+                  <label for="modo-troca">
+                    <input type="radio" name="modoMedalha" id="modo-troca" value="troca" class="radio-medalha-input">
+                    <div class="medalha-modo-card">
+                      <div class="medalha-modo-title">🪙 Modo Moeda de Troca</div>
+                      <p class="medalha-modo-desc">
+                        Resgate a partir de <strong>3 medalhas</strong> e receba um desconto de <strong>R$ 20,00</strong> nesta inscrição.
+                      </p>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Etapa D: Método de Pagamento -->
+              <div class="form-group-block">
+                <h3 class="form-subtitle">
+                  <span class="step-pill">4</span> Forma de Pagamento
+                </h3>
+
+                <div class="metodos-pagamento-grid">
+                  <label for="pagamento-pix">
+                    <input type="radio" name="metodoPagamento" id="pagamento-pix" value="pix" class="radio-pagamento-input" checked>
+                    <div class="pagamento-option-label">⚡ PIX (Instantâneo)</div>
+                  </label>
+
+                  <label for="pagamento-cartao">
+                    <input type="radio" name="metodoPagamento" id="pagamento-cartao" value="cartao" class="radio-pagamento-input">
+                    <div class="pagamento-option-label">💳 Cartão de Crédito/Débito</div>
+                  </label>
+                </div>
+
+                <!-- Detalhes do PIX (Visível por padrão) -->
+                <div class="area-pix-box" id="detalhes-pagamento-pix">
+                  <div class="pix-qr-simulado" id="qr-code-pix">
+                    [ QRCode PIX ]<br>Recife Run Club
+                  </div>
+                  <p style="font-size: 0.82rem; color: var(--text-secondary);">
+                    Chave Copia e Cola gerada dinamicamente:
+                  </p>
+                  <code style="display: block; background: var(--bg-card); padding: 8px; border-radius: 4px; font-size: 0.76rem; color: var(--color-neon-green); margin-top: 6px;">
+                    00020126580014br.gov.bcb.pix0136reciferunclub-pix@es.edu.br520400005303986
+                  </code>
+                </div>
+
+                <!-- Detalhes do Cartão (Oculto via estilo inicial / alternável via JS) -->
+                <div class="detalhes-cartao-box" id="detalhes-pagamento-cartao" style="display: none;">
+                  <div>
+                    <label class="input-label" for="cartao-numero">Número do Cartão:</label>
+                    <input type="text" id="cartao-numero" class="custom-input" placeholder="0000 0000 0000 0000" maxlength="19">
+                  </div>
+                  <div>
+                    <label class="input-label" for="cartao-nome">Nome Impresso no Cartão:</label>
+                    <input type="text" id="cartao-nome" class="custom-input" placeholder="MARIA CLARA M SANTOS">
+                  </div>
+                  <div class="row-inputs-duplo">
+                    <div>
+                      <label class="input-label" for="cartao-validade">Validade:</label>
+                      <input type="text" id="cartao-validade" class="custom-input" placeholder="MM/AA" maxlength="5">
+                    </div>
+                    <div>
+                      <label class="input-label" for="cartao-cvv">CVV:</label>
+                      <input type="text" id="cartao-cvv" class="custom-input" placeholder="123" maxlength="4">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Card de Resumo de Valores e Finalização -->
+          <aside class="checkout-summary-card" id="card-resumo-checkout">
+            <h3 class="summary-title">Resumo do Pedido</h3>
+            
+            <ul class="summary-list">
+              <li class="summary-item">
+                <span id="label-resumo-prova">Inscrição 15km:</span>
+                <span id="valor-resumo-prova">R$ 80,00</span>
+              </li>
+              <li class="summary-item" id="linha-resumo-kit">
+                <span>Kit Oficial + Camisa:</span>
+                <span id="valor-resumo-kit">R$ 45,00</span>
+              </li>
+              <li class="summary-item destaque-desconto" id="linha-desconto-pacote">
+                <span>Desconto Pacote Completo:</span>
+                <span id="valor-desconto-pacote">- R$ 15,00</span>
+              </li>
+              <li class="summary-item destaque-desconto" id="linha-desconto-medalha" style="display: none;">
+                <span>Desconto Moeda de Troca:</span>
+                <span id="valor-desconto-medalha">- R$ 20,00</span>
+              </li>
+            </ul>
+
+            <div class="summary-total-row">
+              <span class="total-label">Total a Pagar:</span>
+              <span class="total-valor" id="valor-total-final">R$ 110,00</span>
+            </div>
+
+            <button type="button" class="btn-primary" id="btn-finalizar-inscricao">
+              Confirmar Inscrição
+            </button>
+            
+            <p style="text-align: center; font-size: 0.74rem; color: var(--text-muted); margin-top: 14px;">
+              🔒 Transação protegida por criptografia TLS 1.3 • Conformidade com LGPD
+            </p>
+          </aside>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. RANKING DOS 8 CORREDORES DA EQUIPE
+         Integrantes: Maria Clara, Jorge, Camila, Thiago, Renato, Isa, Rafa e Ruan
+         Critério: Quilometragem acumulada (KM) e tempo líquido
+         ====================================================================== -->
+    <section class="section-block" id="secao-ranking">
+      <div class="container">
+        
+        <header class="section-header">
+          <p class="section-subtitle">Competitividade Saudável</p>
+          <h2 class="section-title">Ranking da Equipe de Corredores</h2>
+          <p class="section-lead">
+            Classificação atualizada dos 8 integrantes do clube baseada na quilometragem percorrida e tempos médios:
+          </p>
+        </header>
+
+        <div class="ranking-table-wrapper">
+          <table class="ranking-table" id="tabela-ranking-equipe">
+            <thead>
+              <tr>
+                <th class="col-posicao">Pos.</th>
+                <th>Corredor</th>
+                <th>KM Acumulados</th>
+                <th>Pace Médio</th>
+                <th>Melhor Tempo (10km)</th>
+                <th>Medalhas</th>
+              </tr>
+            </thead>
+            <tbody id="corpo-tabela-ranking">
+              
+              <!-- 1º Lugar: Jorge -->
+              <tr>
+                <td class="col-posicao podio-1">🥇 1º</td>
+                <td>
+                  <div class="corredor-perfil-td">
+                    <div class="corredor-avatar" style="border-color: var(--color-neon-green);">JO</div>
+                    <span>Jorge</span>
+                  </div>
+                </td>
+                <td><strong style="color: var(--color-neon-green);">82 km</strong></td>
+                <td>4'10" /km</td>
+                <td>41min 40s</td>
+                <td>🏅 7 medalhas</td>
+              </tr>
+
+              <!-- 2º Lugar: Maria Clara (Perfil Logado) -->
+              <tr style="background-color: rgba(49, 236, 86, 0.05);">
+                <td class="col-posicao podio-2">🥈 2º</td>
+                <td>
+                  <div class="corredor-perfil-td">
+                    <div class="corredor-avatar" style="border-color: var(--color-magenta);">MC</div>
+                    <span>Maria Clara</span>
+                    <span class="badge-logado-equipe">Você</span>
+                  </div>
+                </td>
+                <td><strong style="color: var(--color-neon-green);">65 km</strong></td>
+                <td>4'25" /km</td>
+                <td>44min 10s</td>
+                <td>🏅 5 medalhas</td>
+              </tr>
+
+              <!-- 3º Lugar: Renato -->
+              <tr>
+                <td class="col-posicao podio-3">🥉 3º</td>
+                <td>
+                  <div class="corredor-perfil-td">
+                    <div class="corredor-avatar" style="border-color: var(--color-pink-lilac);">RE</div>
+                    <span>Renato</span>
+                  </div>
+                </td>
+                <td><strong style="color: var(--color-neon-green);">62 km</strong></td>
+                <td>4'32" /km</td>
+                <td>45min 20s</td>
+                <td>🏅 5 medalhas</td>
+              </tr>
+
+              <!-- 4º Lugar: Camila -->
+              <tr>
+                <td class="col-posicao">4º</td>
+                <td>
+                  <div class="corredor-perfil-td">
+                    <div class="corredor-avatar">CA</div>
+                    <span>Camila</span>
+                  </div>
+                </td>
+                <td><strong>58 km</strong></td>
+                <td>4'45" /km</td>
+                <td>47min 30s</td>
+                <td>🏅 4 medalhas</td>
+              </tr>
+
+              <!-- 5º Lugar: Thiago -->
+              <tr>
+                <td class="col-posicao">5º</td>
+                <td>
+                  <div class="corredor-perfil-td">
+                    <div class="corredor-avatar">TH</div>
+                    <span>Thiago</span>
+                  </div>
+                </td>
+                <td><strong>54 km</strong></td>
+                <td>4'50" /km</td>
+                <td>48min 20s</td>
+                <td>🏅 4 medalhas</td>
+              </tr>
+
+              <!-- 6º Lugar: Isa -->
+              <tr>
+                <td class="col-posicao">6º</td>
+                <td>
+                  <div class="corredor-perfil-td">
+                    <div class="corredor-avatar">IS</div>
+                    <span>Isa</span>
+                  </div>
+                </td>
+                <td><strong>49 km</strong></td>
+                <td>5'02" /km</td>
+                <td>50min 20s</td>
+                <td>🏅 3 medalhas</td>
+              </tr>
+
+              <!-- 7º Lugar: Rafa -->
+              <tr>
+                <td class="col-posicao">7º</td>
+                <td>
+                  <div class="corredor-perfil-td">
+                    <div class="corredor-avatar">RA</div>
+                    <span>Rafa</span>
+                  </div>
+                </td>
+                <td><strong>45 km</strong></td>
+                <td>5'15" /km</td>
+                <td>52min 30s</td>
+                <td>🏅 3 medalhas</td>
+              </tr>
+
+              <!-- 8º Lugar: Ruan -->
+              <tr>
+                <td class="col-posicao">8º</td>
+                <td>
+                  <div class="corredor-perfil-td">
+                    <div class="corredor-avatar">RU</div>
+                    <span>Ruan</span>
+                  </div>
+                </td>
+                <td><strong>40 km</strong></td>
+                <td>5'28" /km</td>
+                <td>54min 40s</td>
+                <td>🏅 2 medalhas</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. MINHAS INSCRIÇÕES, TROCA DE CAMISA (48h) E REEMBOLSO (72h)
+         Regras: Troca de tamanho até 48h antes; Reembolso até 72h antes ou
+         com envio de justificativa documental para análise do suporte.
+         ====================================================================== -->
+    <section class="section-block" id="minhas-inscricoes">
+      <div class="container">
+        
+        <header class="section-header">
+          <p class="section-subtitle">Gestão do Atleta</p>
+          <h2 class="section-title">Minhas Inscrições Ativas</h2>
+          <p class="section-lead">
+            Acompanhe suas inscrições e teste as regras de negócio de troca de tamanho de camisa e cancelamento com reembolso:
+          </p>
+        </header>
+
+        <div class="grid-inscricoes-usuario" id="lista-minhas-inscricoes">
+          
+          <!-- Card de Inscrição Ativa da Atleta Maria Clara -->
+          <article class="card-minha-inscricao" id="inscricao-card-101">
+            
+            <div class="inscricao-header-card">
+              <div>
+                <span class="inscricao-codigo">Inscrição #RRC-2026-101</span>
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin-top: 4px;">Circuito Noturno Boa Viagem (10km)</h3>
+                <p style="font-size: 0.85rem; color: var(--text-secondary);">Data da Prova: 28 de Novembro de 2026 • 19:30</p>
+              </div>
+              <span class="status-badge-confirmada" id="status-inscricao-badge">Confirmada</span>
+            </div>
+
+            <!-- Dados do Kit Atual -->
+            <div style="font-size: 0.9rem; margin-bottom: 16px;">
+              <p>📦 <strong>Kit Escolhido:</strong> Pacote Completo Oficial</p>
+              <p>👕 <strong>Tamanho Atual da Camisa:</strong> <span id="tamanho-camisa-atual" style="color: var(--color-neon-green); font-weight: 800;">M</span></p>
+              <p>💳 <strong>Pagamento:</strong> R$ 90,00 via PIX (Liquidado)</p>
+            </div>
+
+            <!-- Teste da Regra 1: Troca de Camisa (Limite 48 horas) -->
+            <div class="regra-box" id="box-troca-camisa">
+              <div class="regra-titulo">
+                <span>👕 Solicitar Troca de Camisa (Regra 48h)</span>
+                <span class="regra-alerta-tempo alerta-valido" id="tempo-restante-troca">⏳ Faltam 120h (Permitido)</span>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 10px;">
+                Conforme a RN06, a troca é autorizada até 48 horas antes da prova mediante estoque disponível.
+              </p>
+              <div class="box-acoes-inline">
+                <select id="select-novo-tamanho" class="custom-select" style="max-width: 130px; padding: 8px;">
+                  <option value="P">Tamanho P</option>
+                  <option value="M" selected>Tamanho M</option>
+                  <option value="G">Tamanho G</option>
+                  <option value="GG">Tamanho GG</option>
+                </select>
+                <button type="button" class="btn-secondary" id="btn-solicitar-troca-camisa">Confirmar Troca</button>
+              </div>
+              <div id="feedback-troca-camisa" style="font-size: 0.8rem; margin-top: 8px; color: var(--color-neon-green); display: none;"></div>
+            </div>
+
+            <!-- Teste da Regra 2: Reembolso e Cancelamento (Limite 72 horas) -->
+            <div class="regra-box" id="box-solicitar-reembolso">
+              <div class="regra-titulo">
+                <span>💰 Cancelamento e Reembolso (Regra 72h)</span>
+                <span class="regra-alerta-tempo alerta-valido" id="tempo-restante-reembolso">⏳ Mais de 72h (Liberado)</span>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 10px;">
+                Conforme a RN07, até 72h antes o estorno é automático. Com menos de 72h, é obrigatório preencher a justificativa para avaliação do suporte.
+              </p>
+              
+              <!-- Campo de Justificativa para Análise de Suporte -->
+              <div style="margin-bottom: 10px;">
+                <label for="textarea-justificativa" class="input-label" style="font-size: 0.8rem;">
+                  Justificativa / Motivo do Cancelamento:
+                </label>
+                <textarea id="textarea-justificativa" class="custom-textarea" rows="2" placeholder="Descreva o motivo (ex.: atestado médico ou imprevisto)..."></textarea>
+              </div>
+
+              <div class="box-acoes-inline">
+                <button type="button" class="btn-magenta" id="btn-solicitar-reembolso">Solicitar Reembolso</button>
+              </div>
+              <div id="feedback-reembolso" style="font-size: 0.8rem; margin-top: 8px; color: var(--color-magenta); display: none;"></div>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       7. RODAPÉ DO SITE
+       Créditos acadêmicos aos 8 integrantes da equipe e disciplina
+       ======================================================================== -->
+  <footer class="footer-site" id="rodape-site">
+    <div class="container">
+      <p style="font-weight: 700; font-size: 1rem; color: var(--text-primary); margin-bottom: 6px;">
+        Recife Run Club • Engenharia de Software (2º Período)
+      </p>
+      <p style="color: var(--text-muted); font-size: 0.84rem;">
+        Projeto acadêmico desenvolvido colaborativamente pelos integrantes:
+      </p>
+
+      <!-- Lista dos 8 Integrantes da Equipe -->
+      <div class="footer-equipe-list" id="lista-equipe-rodape">
+        <span class="footer-membro-tag">Maria Clara</span>
+        <span class="footer-membro-tag">Jorge</span>
+        <span class="footer-membro-tag">Camila</span>
+        <span class="footer-membro-tag">Thiago</span>
+        <span class="footer-membro-tag">Renato</span>
+        <span class="footer-membro-tag">Isa</span>
+        <span class="footer-membro-tag">Rafa</span>
+        <span class="footer-membro-tag">Ruan</span>
+      </div>
+
+      <p style="font-size: 0.78rem; color: var(--text-muted);">
+        Recife/PE • Paleta de Cores: Verde Neon (#31EC56), Magenta (#EF036C) e Rosa/Lilás (#EE72F8)
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
