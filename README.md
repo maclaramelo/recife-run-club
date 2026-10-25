@@ -1,6 +1,6 @@
 # Recife Run Club 🏃‍♂️💨
 
-> **Projeto Acadêmico de Engenharia de Software – 2º Período**  
+> **Projeto Acadêmico de Engenharia de Software – 2º Período - Engenharia da Computação e Sistemas de Inormação**  
 > Plataforma de gestão comunitária de corridas de rua, treinos e gamificação na cidade do Recife.
 
 ---
@@ -14,14 +14,14 @@ A plataforma viabiliza a inscrição em corridas oficiais, organização de trei
 
 ### 1.2 Integrantes da Equipe
 O desenvolvimento do projeto é conduzido colaborativamente pela equipe:
+- **Camila Albuquerque**
+- **Isabela Regina**
+- **Jorge Luiz**
 - **Maria Clara**
-- **Jorge**
-- **Camila**
-- **Thiago**
-- **Renato**
-- **Isa**
-- **Rafa**
-- **Ruan**
+- **Rafael Laurencio**
+- **Renato Santos**
+- **Ruan Alves**
+- **Thiago Gabriel**
 
 ---
 
