@@ -14,6 +14,7 @@ A plataforma viabiliza a inscrição em corridas oficiais, organização de trei
 
 ### 1.2 Integrantes da Equipe
 O desenvolvimento do projeto é conduzido colaborativamente pela equipe:
+<<<<<<< HEAD
 - **Camila Albuquerque Silva 01898272**
 - **Isabela Regina Bandeira Pontes 01798209**
 - **Jorge Luiz Ribeiro da Silva Dias 01898726**
@@ -22,7 +23,17 @@ O desenvolvimento do projeto é conduzido colaborativamente pela equipe:
 - **Renato Santos de Melo 01876267**
 - **Ruan Alves Diniz Silva 01898376**
 - **Thiago Gabriel Nascimento de Lima  01894255**
+=======
+>>>>>>> a596a73 (fix(docs): update team member names and IDs in README.md)
 
+- **Camila Albuquerque Silva 01898272**
+- **Isabela Regina Bandeira Pontes 01798209**
+- **Jorge Luiz Ribeiro da Silva Dias 01898726**
+- **Maria Clara Melo dos Santos  01890228**
+- **Rafael Laurencio Silva 01904913**
+- **Renato Santos de Melo 01876267**
+- **Ruan Alves Diniz Silva 01898376**
+- **Thiago Gabriel Nascimento de Lima  01894255**
 ---
 
 ## 2. Identidade Visual e Paleta de Cores
