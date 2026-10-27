@@ -14,14 +14,14 @@ A plataforma viabiliza a inscrição em corridas oficiais, organização de trei
 
 ### 1.2 Integrantes da Equipe
 O desenvolvimento do projeto é conduzido colaborativamente pela equipe:
-- **Camila Albuquerque**
-- **Isabela Regina**
-- **Jorge Luiz**
-- **Maria Clara**
-- **Rafael Laurencio**
-- **Renato Santos**
-- **Ruan Alves**
-- **Thiago Gabriel**
+- **Camila Albuquerque Silva 01898272**
+- **Isabela Regina Bandeira Pontes 01798209**
+- **Jorge Luiz Ribeiro da Silva Dias 01898726**
+- **Maria Clara Melo dos Santos  01890228**
+- **Rafael Laurencio Silva 01904913**
+- **Renato Santos de Melo 01876267**
+- **Ruan Alves Diniz Silva 01898376**
+- **Thiago Gabriel Nascimento de Lima  01894255**
 
 ---
 
